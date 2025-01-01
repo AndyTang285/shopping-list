@@ -37,18 +37,19 @@
         const button = document.querySelector("button");
 
         button.addEventListener("click", () => {
+
             const inputValue = input.value;
             input.value = "";
 
-            const listItem = document.createItem("li");
-            const span = document.createItem("span");
-            const deleteBtn = document.createItem("button");
+            const listItem = document.createElement("li");
+            const span = document.createElement("span");
+            const deleteBtn = document.createElement("button");
 
-            span.textContent = inputValue;
-            deleteBtn.textContent = "Delete";
 
             listItem.appendChild(span);
+            span.textContent = inputValue;
             listItem.appendChild(deleteBtn);
+            deleteBtn.textContent = "Delete";
             list.appendChild(listItem);
 
             deleteBtn.addEventListener("click", () => {
@@ -57,8 +58,6 @@
 
             input.focus();
         }); 
-
-
 
     </script>
   </body>
